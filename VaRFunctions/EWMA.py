@@ -1,8 +1,6 @@
 import numpy as np
 
-def EWMA(r_df
-         , lam
-         , sigma_init=None):
+def EWMA(r_df, lam, sigma_init=None):
     n_obs, n_assets = r_df.shape
 
     # convert to numpy
