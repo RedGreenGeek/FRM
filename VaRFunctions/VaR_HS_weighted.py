@@ -1,6 +1,6 @@
 import numpy as np
-from SupportFunctions.exp_weight import exp_weight
-from SupportFunctions.interpt_2_pts import interpt_2_pts
+from HelperFunctions.exp_weight import exp_weight
+from HelperFunctions.interpt_2_pts import interpt_2_pts
 
 
 def VaR_HS_weighted(returns, n=500, lam = 0.995, percentile=0.99):
