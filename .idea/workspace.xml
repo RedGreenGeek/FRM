@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a77fc11-dd77-4cb8-8475-ee6bdaeb5e82" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/FRM.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VaRFunctions/VaR.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VaRFunctions/sigma_p.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trash.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelperFunctions/pct_change.py" beforeDir="false" afterPath="$PROJECT_DIR$/HelperFunctions/pct_change.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelperFunctions/returns.py" beforeDir="false" afterPath="$PROJECT_DIR$/HelperFunctions/returns.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VaRFunctions/EWMA.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VaRFunctions/HS_simple.py" beforeDir="false" afterPath="$PROJECT_DIR$/VaRFunctions/HS_simple.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VaRFunctions/VaR.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VaRFunctions/VaRFunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/VaRFunctions/VaRFunctions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VaRFunctions/VaR_HS_weighted.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +42,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../week4.py" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

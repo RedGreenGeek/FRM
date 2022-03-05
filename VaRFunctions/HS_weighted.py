@@ -3,7 +3,7 @@ from HelperFunctions.exp_weight import exp_weight
 from HelperFunctions.interpt_2_pts import interpt_2_pts
 
 
-def VaR_HS_weighted(returns, n=500, lam = 0.995, percentile=0.99):
+def HS_weighted(returns, n=500, lam = 0.995, percentile=0.99):
     
     data = np.empty((n,3))
     data[:, 0] = returns[-n:]
