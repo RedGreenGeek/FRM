@@ -1,6 +1,7 @@
 from VaRFunctions.VaRFunctions import *
 from HelperFunctions.HelperFunctions import *
-import matplotlib.pyplot as plt
+from PlotFunctions.plt_vars import *
+
 #### settings for calculations ####
 # VaR percentiles
 percentiles = [0.95, 0.99]
@@ -17,5 +18,6 @@ forex = ['EURUSD=X','GBPUSD=X']
 alpha_fx = np.array([3000, 3000])
 df_data = calculate_vars(df_data, investments, alpha, forex, alpha_fx, percentiles)
 
-plt.plot(df_data[df_data.columns[[-18,-17,-16,-15,-6,-5,-4,-3,-2,-1]]].tail(1).values, np.zeros_like(df_data[df_data.columns[[-18,-17,-16,-15,-6,-5,-4,-3,-2,-1]]].tail(1).values) + val, 'x')
+labels = df_data.columns[[-18,-17,-16,-15,-6,-5,-4,-3,-2,-1]].values
+plt_vars(df_data, labels)
 print(df_data.columns[-8:])
