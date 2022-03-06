@@ -6,9 +6,11 @@ import numpy as np
 # add an n
 def MBA_simple(df_data, investments, alpha, percentile=0.99, n=200):
 
-    df_data = returns(df_data, investments, alpha)
+    USD_investments = [inv+'_USD' if '.DE' in inv or '.L' in inv else inv for inv in investments ]
 
-    pct_investments = [inv+'_pct' for inv in investments]
+    df_data = returns(df_data, USD_investments, alpha)
+
+    pct_investments = [inv+'_pct' for inv in USD_investments]
     
     var_array = np.zeros(df_data.shape[0])
     for i in range(n,df_data.shape[0]):

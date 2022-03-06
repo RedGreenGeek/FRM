@@ -4,15 +4,12 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import os
-from scipy.stats import norm
-from FRM.HelperFunctions.returns import returns
-from FRM.HelperFunctions.pct_change import pct_change
-from FRM.HelperFunctions.sigma_p import sigma_p_func
+from HelperFunctions.HelperFunctions import *
 from scipy.stats import norm
 
 
 
-df_data = pd.read_csv('./FRM/Trash/Lecture 5_KTS/StockData.txt')
+df_data = pd.read_csv('./Trash/Lecture 5_KTS/StockData.txt')
 
 headers = df_data.columns
 
@@ -26,7 +23,9 @@ df_stocks = pd.concat([df_data.iloc[:,0:3], df_data.iloc[:,11:16]], axis=1)
 
 alpha = np.array([2000, 2000, 2000, 2000, 2000])
 
-df_stocks = returns(df_stocks, alpha)
+investments = df_stocks.columns[3:]
+
+df_stocks = returns(df_stocks, investments, alpha)
 
 sigma_simple = df_stocks.iloc[:,8:13].cov()
 

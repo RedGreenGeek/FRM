@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a77fc11-dd77-4cb8-8475-ee6bdaeb5e82" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Trash.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelperFunctions/pct_change.py" beforeDir="false" afterPath="$PROJECT_DIR$/HelperFunctions/pct_change.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelperFunctions/returns.py" beforeDir="false" afterPath="$PROJECT_DIR$/HelperFunctions/returns.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VaRFunctions/EWMA.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelperFunctions/HelperFunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/HelperFunctions/HelperFunctions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Trash/Lecture 5_KTS/Ex5.py" beforeDir="false" afterPath="$PROJECT_DIR$/Trash/Lecture 5_KTS/Ex5.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VaRFunctions/HS_simple.py" beforeDir="false" afterPath="$PROJECT_DIR$/VaRFunctions/HS_simple.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VaRFunctions/VaR.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VaRFunctions/HS_weighted.py" beforeDir="false" afterPath="$PROJECT_DIR$/VaRFunctions/HS_weighted.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VaRFunctions/MBA_EWMA.py" beforeDir="false" afterPath="$PROJECT_DIR$/VaRFunctions/MBA_EWMA.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VaRFunctions/MBA_simple.py" beforeDir="false" afterPath="$PROJECT_DIR$/VaRFunctions/MBA_simple.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VaRFunctions/VaRFunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/VaRFunctions/VaRFunctions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VaRFunctions/VaR_HS_weighted.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VaRFunctions/calculate_vars.py" beforeDir="false" afterPath="$PROJECT_DIR$/VaRFunctions/calculate_vars.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +42,30 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../week4.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/main.py" />
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="FRM" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python3" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

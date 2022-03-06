@@ -1,14 +1,21 @@
 from VaRFunctions.VaRFunctions import *
 from HelperFunctions.HelperFunctions import *
+import matplotlib.pyplot as plt
+#### settings for calculations ####
+# VaR percentiles
+percentiles = [0.95, 0.99]
 
 file_names = ['./ExampleData/GEData.txt', './ExampleData/UKData.txt', './ExampleData/USData.txt']
 base_currency = "USD"
 df_data = file_reader(file_names, base_currency)
 
-investments = ['BMW.DE_USD', 'DWNI.DE_USD', 'RWE.DE_USD', 'GSK.L_USD', 'AZN.L_USD', 'BATS.L_USD', 'IBM', 'MS']
+investments = ['BMW.DE', 'DWNI.DE', 'RWE.DE', 'GSK.L', 'AZN.L', 'BATS.L', 'IBM', 'MS' ]
+
 alpha = np.ones(len(investments), dtype = int)*1000
-percentiles = [0.95, 0.99]
 
-df_data = calculate_vars(df_data, investments, alpha, percentiles)
+forex = ['EURUSD=X','GBPUSD=X']
+alpha_fx = np.array([3000, 3000])
+df_data = calculate_vars(df_data, investments, alpha, forex, alpha_fx, percentiles)
 
-print(df_data.columns[-4:])
+plt.plot(df_data[df_data.columns[[-18,-17,-16,-15,-6,-5,-4,-3,-2,-1]]].tail(1).values, np.zeros_like(df_data[df_data.columns[[-18,-17,-16,-15,-6,-5,-4,-3,-2,-1]]].tail(1).values) + val, 'x')
+print(df_data.columns[-8:])
