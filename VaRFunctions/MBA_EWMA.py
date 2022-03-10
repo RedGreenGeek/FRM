@@ -3,22 +3,24 @@ from VaRFunctions.MBA_simple import VaR
 import numpy as np
 
 
-def MBA_EWMA(df_data, investments, alpha, percentile=0.99, n=200, lam=0.95, sigma_init=None):
+def MBA_EWMA(df_returns, alpha, percentile=0.99, n=200, lam=0.95, sigma_init=None):
+    var_array = np.zeros(df_returns.shape[0])
+    for i in range(n, df_returns.shape[0]):
+        cov_emwa = ewma(df_returns[i-n:i], lam)
+        var_array[i] = VaR(cov_emwa, alpha, percentile)
 
-    USD_investments = [inv+'_USD' if '.DE' in inv or '.L' in inv else inv for inv in investments ]
+    return var_array
 
-    df_data = returns(df_data, USD_investments, alpha)
 
-    pct_investments = [inv+'_pct' for inv in USD_investments]
-    
-    var_array = np.zeros(df_data.shape[0])
+# def MBA_EWMA(df_data, investments, alpha, percentile=0.99, n=200, lam=0.95, sigma_init=None):
 
-    for i in range(n,df_data.shape[0]):
-        var_array[i] = VaR(ewma(df_data[pct_investments][i-n:i],lam), alpha, percentile)
 
-    df_data[(f'MBA_EWMA_{percentile}_{n}_{lam}')] = var_array
+#     for i in range(n,df_data.shape[0]):
+#         var_array[i] = VaR(ewma(df_data[pct_investments][i-n:i],lam), alpha, percentile)
 
-    return df_data
+#     df_data[(f'MBA_EWMA_{percentile}_{n}_{lam}')] = var_array
+
+#     return df_data
 
 
 def ewma(df_pct_data, lam, sigma_init=None):

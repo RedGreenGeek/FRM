@@ -1,5 +1,16 @@
-from HelperFunctions.convert_fx import *
+from functools import reduce
+
 import pandas as pd
+
+from HelperFunctions.convert_fx import *
+
+
+def import_dfs(file_names, market):
+    dfs = [pd.read_csv(file_i) for file_i in file_names]
+    stock_market = {market[i]: dfs[i].columns[3:].to_list() for i in range(len(file_names))}
+    df_merged = reduce(lambda  left,right: pd.merge(left,right,on=['Year','Month','Day'],
+                                            how='outer'), dfs)
+    return df_merged, stock_market
 
 def file_reader(file_names, base_currency):
     
