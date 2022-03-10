@@ -1,9 +1,10 @@
 from HelperFunctions.pct_change import pct_change
-from VaRFunctions.MBA_simple import VaR
+from VaRFunctions import VaR
 import numpy as np
 
 def MBA_map_capm(df_data, investments, alpha, forex, alpha_fx, percentile=0.99, n=200):
     
+    print('go')
     df_data = pct_change(df_data, investments)
 
     # Should be made dynamic
@@ -31,7 +32,7 @@ def MBA_map_capm(df_data, investments, alpha, forex, alpha_fx, percentile=0.99, 
         df_data[(f'{markets[j]}_c')] += c[:,j]
 
     for mar in m:
-        df_data[(f'{markets[j]}_c_pct')] = df_data[(f'{markets[j]}_c')] * df_data[(f'{markets[j]}_pct')]
+        df_data[(f'{mar}_c_pct')] = df_data[(f'{mar}_c')] * df_data[(f'{mar}_pct')]
 
     # Should be made dynamic
     alpha_sx = [1000, 1000, 1000]

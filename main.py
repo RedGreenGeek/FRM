@@ -1,6 +1,7 @@
-from VaRFunctions.VaRFunctions import *
+from VaRFunctions import *
 from HelperFunctions.HelperFunctions import *
 from PlotFunctions.plt_vars import *
+
 
 #### settings for calculations ####
 # VaR percentiles
