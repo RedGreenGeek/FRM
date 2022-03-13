@@ -13,7 +13,7 @@ def HS_weighted(loss, percentile=0.99, n=200, lam=0.995):
         data[:, 0] = loss[i-n:i]
         data = data[(data[:,0]).argsort()]
         data[:, 2] = np.cumsum(data[:,1])
-        idx_exceed = np.argmin(data[:,2] <= (1-percentile))
+        idx_exceed = np.argmin(data[:,2] <= (percentile))
         idx_lower = np.arange(idx_exceed+1)
         var_array[i] = interpt_2_pts(percentile, data[idx_lower[-2:], 2], data[idx_lower[-2:], 0])
     

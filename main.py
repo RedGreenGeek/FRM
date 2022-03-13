@@ -13,10 +13,11 @@ file_names = ['./ExampleData/GEData.txt', './ExampleData/UKData.txt', './Example
 market_cur = ['EUR', 'GBP', 'USD']
 base_currency = "USD"
 # df_data = file_reader(file_names, base_currency)
-df_data, market_dict = import_dfs(file_names,market_cur)
-fx_cols = ['EURUSD=X', 'GBPUSD=X']
-market_dict['GBP'].remove('GBPUSD=X')
-market_dict['EUR'].remove('EURUSD=X')
+df_data, market_dict, fx_dict, indices_dict = import_dfs(file_names,market_cur,base_currency)
+inv_market_dict = {}
+for k, v in market_dict.items():
+    for x in v:
+        inv_market_dict[x] = k
 df_fx_converted = df_data.copy()
 df_fx_converted.loc[:,market_dict['EUR']] *= df_data.loc[:,'EURUSD=X'].values[:, np.newaxis]
 df_fx_converted.loc[:,market_dict['GBP']] *= df_data.loc[:,'GBPUSD=X'].values[:, np.newaxis]
@@ -26,14 +27,13 @@ investments = ['BMW.DE', 'DWNI.DE', 'RWE.DE', 'GSK.L', 'AZN.L', 'BATS.L', 'IBM',
 
 alpha = np.array([1000]*len(investments))
 
+alpha_linked = pd.DataFrame(np.reshape(alpha,(1,len(alpha))), columns=investments)
+
 #df_fx_conv_port = df_fx_converted.loc[:,investments]
 
 #alpha_fx = np.array([10e])
 
-calculate_vars_fx_converted(df_fx_converted, investments, alpha)
-alpha_fx = np.array([3000, 3000])
-df_data = calculate_vars(df_data, investments, alpha, fx_cols, alpha_fx, percentiles)
-
-labels = df_data.columns[[-18,-17,-16,-15,-6,-5,-4,-3,-2,-1]].values
-plt_vars(df_data, labels)
-print(df_data.columns[-8:])
+var_fx_conv_df = calculate_vars_fx_converted(df_fx_converted, investments, alpha, market_dict)
+var_loss = calculate_vars_risk_factors(df_data, investments, alpha_linked, market_dict, fx_dict
+                            , indices_dict, base_currency)
+print('lol')
