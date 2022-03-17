@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a77fc11-dd77-4cb8-8475-ee6bdaeb5e82" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Backtesting/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Backtesting/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VaRFunctions/MBA_map_capm.py" beforeDir="false" afterPath="$PROJECT_DIR$/VaRFunctions/MBA_map_capm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VaRFunctions/VaRFunctions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backtesting/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PlotFunctions/plt_vars.py" beforeDir="false" afterPath="$PROJECT_DIR$/PlotFunctions/plt_vars.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VaRFunctions/HS_simple.py" beforeDir="false" afterPath="$PROJECT_DIR$/VaRFunctions/HS_simple.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VaRFunctions/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/VaRFunctions/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VaRFunctions/calculate_vars.py" beforeDir="false" afterPath="$PROJECT_DIR$/VaRFunctions/calculate_vars.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -39,6 +42,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/main.py" />
+    <property name="settings.editor.selected.configurable" value="advanced.settings" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="FRM" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="FRM" />
+      </console-settings>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
@@ -54,7 +66,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="" />
+      <option name="PARAMETERS" value="--pylab=gtk3" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
