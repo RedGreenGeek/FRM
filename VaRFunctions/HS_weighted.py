@@ -1,7 +1,7 @@
 from HelperFunctions.HelperFunctions import *
 import numpy as np
 
-def HS_weighted(loss, percentile=0.99, n=200, lam=0.995):
+def HS_weighted(loss, percentile=0.99, n=250, lam=0.995):
     var_array = np.empty(loss.shape[0])
     data = np.empty((n,3))
     data[:, 1] = exp_weight(n, lam)  
@@ -37,7 +37,7 @@ def HS_weighted(loss, percentile=0.99, n=200, lam=0.995):
 
 #     return df_data
 
-def HS_weighted_VaR(returns, n=200, lam = 0.995, percentile=0.99):
+def HS_weighted_VaR(returns, n=250, lam = 0.995, percentile=0.99):
     
     data = np.empty((n,3))
     data[:, 0] = returns[-n:]

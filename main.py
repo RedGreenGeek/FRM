@@ -46,11 +46,12 @@ print('lol')
 
 var95s = df_data.columns[df_data.columns.str.contains('0.95')]
 # labels = df_data.columns[[-18,-17,-16,-15,-6,-5,-4,-3,-2,-1]].values
-plt_vars(df_data, var95s)
-plt_vars(df_data, var99s)
+# plt_vars(df_data, var95s)
+# plt_vars(df_data, var99s)
 
-plt_table(df_data, var95s)
-plt_table(df_data, var99s)
+plt_table(df_data, var95s, 'VaR-95, 250 samples')
+plt_table(df_data, var99s,'VaR-99, 250 samples')
+
 
 
 print(df_data[var99s].tail(1))

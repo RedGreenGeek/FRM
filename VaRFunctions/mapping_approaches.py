@@ -13,7 +13,7 @@ def mba_map_fx(df_returns
                , indices_dict
                , base_currency
                , percentile=0.99
-               , n=200):
+               , n=250):
     var_array = np.empty(df_returns.shape[0])
     
     for i in range(n, df_returns.shape[0]):
@@ -48,7 +48,7 @@ def mba_map_index(df_returns
                   , indices_dict
                   , base_currency
                   , percentile=0.99
-                  , n=200):
+                  , n=250):
     var_array = np.empty(df_returns.shape[0])
 
     for i in range(n, df_returns.shape[0]):

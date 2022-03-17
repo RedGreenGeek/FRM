@@ -2,7 +2,7 @@ from math import ceil
 from HelperFunctions.HelperFunctions import returns
 import numpy as np
 
-def HS_simple(df_data, investments, alpha, percentile=0.99, n=200):
+def HS_simple(df_data, investments, alpha, percentile=0.99, n=250):
  
     USD_investments = [inv+'_USD' if '.DE' in inv or '.L' in inv else inv for inv in investments ]
 
@@ -22,6 +22,7 @@ def HS_simple_VaR(returns_df, percentile=0.99, n=200):
     idx = ceil(n - n*percentile)-1
 
     return -np.sort(returns_df.iloc[-n:].values)[idx]
+    
 def HS_simple(loss, percentile=0.99, n=200):
     var_array = np.empty(loss.shape[0])
     for i in range(n, loss.shape[0]): 
