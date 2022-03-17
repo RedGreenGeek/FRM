@@ -2,7 +2,7 @@ from math import ceil
 from HelperFunctions.HelperFunctions import returns
 import numpy as np
 
-def HS_simple(df_data, investments, alpha, percentile=0.99, n=200):
+def HS_simple(df_data, investments, alpha, percentile=0.99, n=250):
  
     USD_investments = [inv+'_USD' if '.DE' in inv or '.L' in inv else inv for inv in investments ]
 

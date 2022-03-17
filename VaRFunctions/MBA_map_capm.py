@@ -6,7 +6,7 @@ from scipy.stats import norm
 import numpy as np
 
 
-def MBA_map_capm(df_data, investments, alpha, forex, alpha_fx, percentile=0.99, n=200):
+def MBA_map_capm(df_data, investments, alpha, forex, alpha_fx, percentile=0.99, n=250):
     
     df_data = pct_change(df_data, investments)
 

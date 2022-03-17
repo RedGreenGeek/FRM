@@ -3,7 +3,7 @@ from VaRFunctions.MBA_simple import VaR
 import numpy as np
 
 
-def MBA_EWMA(df_returns, alpha, percentile=0.99, n=200, lam=0.95, sigma_init=None):
+def MBA_EWMA(df_returns, alpha, percentile=0.99, n=250, lam=0.95, sigma_init=None):
     var_array = np.zeros(df_returns.shape[0])
     for i in range(n, df_returns.shape[0]):
         cov_emwa = ewma(df_returns[i-n:i], lam)

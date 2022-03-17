@@ -2,7 +2,7 @@ from HelperFunctions.pct_change import pct_change
 from VaRFunctions.MBA_simple import VaR
 import numpy as np
 
-def MBA_map_fx(df_data, investments, alpha, forex, alpha_fx, percentile=0.99, n=200):
+def MBA_map_fx(df_data, investments, alpha, forex, alpha_fx, percentile=0.99, n=250):
     
     investments = np.concatenate((np.array(investments), np.array(forex)))
 
