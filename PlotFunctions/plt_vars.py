@@ -8,7 +8,7 @@ def plt_vars(df_data, labels):
     plt.bar(range(len(a)),a)
     plt.show()
 
-def plt_table(df_data, labels):
+def plt_table(df_data, labels, header):
 
     fig = plt.figure()
     colLabels = [lab[:lab.index('0')-1] for lab in labels]
@@ -22,7 +22,7 @@ def plt_table(df_data, labels):
 
 
     header = plt.table(cellText=[['']],
-                      colLabels=['Var 95, 200 samples'],
+                      colLabels=[header],
                       loc='bottom', 
                       bbox=[0, -.3, 1, 0.3]
                       )
