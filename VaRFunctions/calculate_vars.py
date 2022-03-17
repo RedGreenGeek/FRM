@@ -1,7 +1,7 @@
 from VaRFunctions import *
 # from VaRFunctions.MBA_map_capm import MBA_map_capm
 
-def calculate_vars(df_data, investments, alpha, forex, alpha_fx, percentiles, n=200):
+def calculate_vars(df_data, investments, alpha, forex, alpha_fx, percentiles, n=250):
 
     for p in percentiles:
         df_data = MBA_simple(df_data, investments, alpha, percentile=p, n=n)
