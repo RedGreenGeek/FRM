@@ -5,17 +5,8 @@ import numpy as np
 from scipy.stats import norm
 import numpy as np
 
-def MBA_simple(df_returns, alpha, percentile=0.99, n=200):
-    var_array = np.zeros(df_returns.shape[0])
-    
-    print('go')
-    df_data = pct_change(df_data, investments)
 
-    return var_array
-
-
-
-def MBA_map_capm(stock_returns, alpha, percentile=0.99, n=200):
+def MBA_map_capm(df_data, investments, alpha, forex, alpha_fx, percentile=0.99, n=200):
     
     df_data = pct_change(df_data, investments)
 
@@ -25,8 +16,8 @@ def MBA_map_capm(stock_returns, alpha, percentile=0.99, n=200):
 
     df_data = pct_change(df_data, forex)
 
-    for mar in m:
-        df_data[(f'{mar}_c_pct')] = df_data[(f'{mar}_c')] * df_data[(f'{mar}_pct')]
+    pct_investments = [inv+'_pct' for inv in investments]
+    pct_markets = [inv+'_pct' for inv in markets]
 
     c = np.zeros((df_data.shape[0], len(markets)))   
     for i in range(n+1,df_data.shape[0]):
@@ -44,7 +35,7 @@ def MBA_map_capm(stock_returns, alpha, percentile=0.99, n=200):
         df_data[(f'{markets[j]}_c')] += c[:,j]
 
     for mar in m:
-        df_data[(f'{markets[j]}_c_pct')] = df_data[(f'{markets[j]}_c')] * df_data[(f'{markets[j]}_pct')]
+        df_data[(f'{mar}_c_pct')] = df_data[(f'{mar}_c')] * df_data[(f'{mar}_pct')]
 
     # Should be made dynamic
     alpha_sx = [1000, 1000, 1000]
@@ -62,6 +53,5 @@ def MBA_map_capm(stock_returns, alpha, percentile=0.99, n=200):
     df_data[(f'MBA_map_capm_{percentile}_{n}')] = var_array
 
     return df_data
-
  
         
