@@ -20,7 +20,7 @@ def calculate_var_es(stock_returns, loss, df_returns, investments, alpha, alpha_
         mba_map_index_var, es_mba_map_index = mba_map_index(df_returns, investments, alpha_linked, market_dict, fx_dict
                                         , indices_dict, base_currency, percentile=perc_i, n=n_calc_days)
         
-        name_column = ['hs', 'pw_hs','mba', 'ewma_hs', 'map_w_fx','map_idx']
+        name_column = ['hs', 'pw_hs','mba', 'mba_ewma', 'map_w_fx','map_idx']
         # save results in dict for perc_i
         dict_output[f"var_{perc_i}"] = pd.DataFrame(np.array([hs_simple_var, hs_weighted_var
                                                               , mba_simple_var, mba_ewma_var
