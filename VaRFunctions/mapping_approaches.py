@@ -16,7 +16,7 @@ def mba_map_fx(df_returns
                , n=250):
     var_array = np.empty(df_returns.shape[0])
     
-    for i in range(n, df_returns.shape[0]):
+    for i in range(df_returns.shape[0]-n, df_returns.shape[0]):
         df_returns_i = df_returns.loc[i-n:i,:]
         exposures = []
         alpha = np.array([])
