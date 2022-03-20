@@ -33,7 +33,11 @@ alpha_linked = pd.DataFrame(np.reshape(alpha,(1,len(alpha))), columns=investment
 
 #alpha_fx = np.array([10e])
 
-var_fx_conv_df = calculate_vars_fx_converted(df_fx_converted, investments, alpha, market_dict)
+# var_fx_conv_df = calculate_vars_fx_converted(df_fx_converted
+#                                              , investments
+#                                              , alpha
+#                                              , market_dict
+#                                              , [0.99])
 var_loss = calculate_vars_risk_factors(df_data, investments, alpha_linked, market_dict, fx_dict
                             , indices_dict, base_currency)
 print('lol')
