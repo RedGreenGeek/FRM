@@ -2,21 +2,8 @@ from VaRFunctions.VaRFunctions import *
 import matplotlib.pyplot as plt
 from scipy.stats import norm
 
-def calculate_var_es(df_data, investments, alpha, alpha_linked, market_dict, fx_dict
-                            , indices_dict, base_currency, percentiles, n_calc_days, n_days_back_test):
-    df_data_used = df_data.iloc[-(n_calc_days+n_days_back_test):,:]
-    
-    # data fx converted
-    df_fx_converted = df_data_used.copy()
-    df_fx_converted.loc[:,market_dict['EUR']] *= df_fx_converted.loc[:,'EURUSD=X'].values[:, np.newaxis]
-    df_fx_converted.loc[:,market_dict['GBP']] *= df_fx_converted.loc[:,'GBPUSD=X'].values[:, np.newaxis]
-    stock_returns = df_fx_converted.loc[:, investments].pct_change().dropna()
-    weighted_returns = stock_returns @ alpha 
-    loss = -weighted_returns
-    
-    # returns for mappings:
-    df_returns = df_data_used.pct_change().dropna()
-    
+def calculate_var_es(stock_returns, loss, df_returns, investments, alpha, alpha_linked, market_dict, fx_dict
+                            , indices_dict, base_currency, percentiles, n_calc_days):
     # prepare output dict
     dict_output = {}
     
@@ -39,13 +26,17 @@ def calculate_var_es(df_data, investments, alpha, alpha_linked, market_dict, fx_
                                                               , mba_simple_var, mba_ewma_var
                                                               , mba_map_fx_var, mba_map_index_var]).T
                                                     , columns=name_column)
+        #dict_output[f"violation_{perc_i}"] = dict_output[f"var_{perc_i}"].iloc[-n_calc_days:].values - loss.iloc[-n_calc_days:][:,np.newaxis]
+        dict_output[f"violations_{perc_i}"] = (dict_output[f"var_{perc_i}"]
+                                              ).apply(lambda x:
+                                                np.sum((x.iloc[-n_calc_days:]-loss.iloc[-n_calc_days:].values)<0))
         dict_output[f"es_{perc_i}"] = pd.DataFrame(np.array([es_hs_simple, es_ha_weighted
                                                              , es_array_mba, es_array_ewma
                                                              , es_mba_map_fx, es_mba_map_index]).T
                                                    , columns=name_column)
     
     
-    return dict_output
+    return dict_output, name_column
     
 
 # def calculate_vars_risk_factors(df_data

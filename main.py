@@ -2,6 +2,7 @@ from VaRFunctions.VaRFunctions import *
 from HelperFunctions.HelperFunctions import *
 from PlotFunctions.plt_vars import *
 import matplotlib.pyplot as plt
+from Backtesting.test import *
 
 from VaRFunctions.calculate_vars import *
 
@@ -29,6 +30,8 @@ alpha_linked = pd.DataFrame(np.reshape(alpha,(1,len(alpha))), columns=investment
 
 n_calc_days = 250
 n_days_back_test = 250
-var_es_dict = calculate_var_es(df_data, investments, alpha, alpha_linked, market_dict, fx_dict
-                            , indices_dict, base_currency, percentiles, n_calc_days, n_days_back_test)
+stock_returns, loss, df_returns = prepare_dfs(df_data, alpha, investments, market_dict, n_calc_days, n_days_back_test)
+var_es_dict, name_column = calculate_var_es(stock_returns, loss, df_returns, investments, alpha, alpha_linked, market_dict, fx_dict
+                            , indices_dict, base_currency, percentiles, n_calc_days)
+back_testing = backtesting(loss, df_returns, var_es_dict)
 
