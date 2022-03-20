@@ -1,9 +1,7 @@
+import re
 from functools import reduce
 
 import pandas as pd
-import re
-
-from pytest import mark
 
 from HelperFunctions.convert_fx import *
 

@@ -9,7 +9,8 @@ def backtesting(var_es_dict, name_models, percentiles, n_days_back_test):
     # coverage
     list_str = list(map(str,percentiles))
     tests = pd.DataFrame(index=pd.MultiIndex.from_product([name_models, list_str]),
-                         columns = ['p_value_1', 'chi2_statistic_1',
+                         columns = ['violations', 'len_period',
+                                    'p_value_1', 'chi2_statistic_1',
                                     'p_value_2', 'chi2_statistic_2',
                                     'p_value_3', 'chi2_statistic_3'])
     
@@ -53,7 +54,10 @@ def coverage(violations, n_days_back_test, percentile):
             print("Something is wrong!")
 
     pi_01 = n_01 / (n_00 + n_01)
-    pi_11 = n_11 / (n_10 + n_11)
+    if (n_10 + n_11) != 0:
+        pi_11 = n_11 / (n_10 + n_11)
+    else:
+        pi_11 = np.nan 
     LR_ind = (pi_observed**(n1) * (1 - pi_observed)**(n0)) / (pi_01**n_01 * (1 - pi_01)**n_00 * pi_11**n_11 * (1 - pi_11)**n_10)
     chi2_statistic_2 = -2*math.log(LR_ind, math.exp(1))
     p_value_2 = (1 - chi2.cdf(chi2_statistic_2, 1))
@@ -62,4 +66,4 @@ def coverage(violations, n_days_back_test, percentile):
     p_value_3 = (1 - chi2.cdf(chi2_statistic_3, 2))
     
     
-    return p_value_1, chi2_statistic_1, p_value_2, chi2_statistic_2, p_value_3, chi2_statistic_3
+    return n1, n_days_back_test, p_value_1, chi2_statistic_1, p_value_2, chi2_statistic_2, p_value_3, chi2_statistic_3

@@ -1,10 +1,9 @@
 import numpy as np
 from HelperFunctions.HelperFunctions import *
-from numpy import percentile
 from scipy.stats import norm
 
 
-def MBA_simple(df_returns, alpha, percentile=0.99, n=200):
+def MBA_simple(df_returns, alpha, percentile=0.99, n=250):
     var_array = np.zeros(df_returns.shape[0])
     es_array = np.zeros(df_returns.shape[0])
     
