@@ -29,7 +29,7 @@ def calculate_var_es(stock_returns, loss, df_returns, investments, alpha, alpha_
         #dict_output[f"violation_{perc_i}"] = dict_output[f"var_{perc_i}"].iloc[-n_calc_days:].values - loss.iloc[-n_calc_days:][:,np.newaxis]
         dict_output[f"violations_{perc_i}"] = (dict_output[f"var_{perc_i}"]
                                               ).apply(lambda x:
-                                                np.sum((x.iloc[-n_calc_days:]-loss.iloc[-n_calc_days:].values)<0))
+                                                (x.iloc[-n_calc_days:]-loss.iloc[-n_calc_days:].values)<0)
         dict_output[f"es_{perc_i}"] = pd.DataFrame(np.array([es_hs_simple, es_ha_weighted
                                                              , es_array_mba, es_array_ewma
                                                              , es_mba_map_fx, es_mba_map_index]).T

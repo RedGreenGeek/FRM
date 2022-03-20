@@ -31,7 +31,7 @@ alpha_linked = pd.DataFrame(np.reshape(alpha,(1,len(alpha))), columns=investment
 n_calc_days = 250
 n_days_back_test = 250
 stock_returns, loss, df_returns = prepare_dfs(df_data, alpha, investments, market_dict, n_calc_days, n_days_back_test)
-var_es_dict, name_column = calculate_var_es(stock_returns, loss, df_returns, investments, alpha, alpha_linked, market_dict, fx_dict
+var_es_dict, name_models = calculate_var_es(stock_returns, loss, df_returns, investments, alpha, alpha_linked, market_dict, fx_dict
                             , indices_dict, base_currency, percentiles, n_calc_days)
-back_testing = backtesting(loss, df_returns, var_es_dict)
+back_testing = backtesting(var_es_dict, name_models, percentiles, n_days_back_test)
 
