@@ -19,7 +19,7 @@ def mba_map_fx(df_returns
     
     
     for i in range(n, df_returns.shape[0]+1):
-        df_returns_i = df_returns.loc[i-n:i,:]
+        df_returns_i = df_returns.iloc[i-n:i,:]
         exposures = []
         alpha = np.array([])
         
@@ -55,8 +55,8 @@ def mba_map_index(df_returns
     var_array = np.empty(df_returns.shape[0])
     es_array = np.empty(df_returns.shape[0])
 
-    for i in range(n, df_returns.shape[0]):
-        df_returns_i = df_returns.loc[i-n:i,:]
+    for i in range(n, df_returns.shape[0]+1):
+        df_returns_i = df_returns.iloc[i-n:i,:]
         exposures = []
         alpha = []
         
@@ -78,7 +78,7 @@ def mba_map_index(df_returns
         alpha = np.array(alpha)
         cov_matrix_capm = df_returns_i.loc[:, exposures].cov().dropna()
         portfolio_variance_capm = (alpha.T @ cov_matrix_capm  @ alpha).loc[0,0]
-        var_array[i] = np.sqrt(portfolio_variance_capm)*norm.ppf(percentile)
+        var_array[i-1] = np.sqrt(portfolio_variance_capm)*norm.ppf(percentile)
         es_array[i-1] = np.sqrt(portfolio_variance_capm) * norm.pdf(norm.ppf(percentile))/(1-percentile)
     
     return var_array, es_array

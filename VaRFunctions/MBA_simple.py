@@ -26,4 +26,4 @@ def expected_shortfall(sigma, alpha, percentile=0.99):
     
     sigma_p = sigma_p_func(sigma, alpha)
     
-    return np.sqrt(sigma_p) * norm.pdf(norm.ppf(percentile))/(1-percentile)
+    return sigma_p * norm.pdf(norm.ppf(percentile))/(1-percentile)

@@ -21,8 +21,8 @@ def HS_weighted(loss, percentile=0.99, n=250, lam=0.995):
 
 # def es_weighted_calc(input_data, idx_exceed, percentile): 
 #     weights = input_data[(idx_exceed-1):, 1].copy()
-#     #weights[0] -=  (1-percentile) 
-#     #weights /= (1-percentile) 
+#     weights[0] -=  (1-percentile) 
+#     weights /= (1-percentile) 
     
 #     return np.average(input_data[(idx_exceed-1):, 0], weights=weights)
 

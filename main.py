@@ -27,8 +27,8 @@ alpha = np.array([1000]*len(investments))
 # link the investments to the name for use in mapping approaches
 alpha_linked = pd.DataFrame(np.reshape(alpha,(1,len(alpha))), columns=investments)
 
-var_fx_conv_df = calculate_vars_fx_converted(df_data, investments, alpha, alpha_linked, market_dict, fx_dict
-                            , indices_dict, base_currency, percentiles)
-# var_loss = calculate_vars_risk_factors(df_data, investments, alpha_linked, market_dict, fx_dict
-#                             , indices_dict, base_currency)
-print('lol')
+n_calc_days = 250
+n_days_back_test = 250
+var_es_dict = calculate_var_es(df_data, investments, alpha, alpha_linked, market_dict, fx_dict
+                            , indices_dict, base_currency, percentiles, n_calc_days, n_days_back_test)
+
