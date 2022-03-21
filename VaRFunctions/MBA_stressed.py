@@ -11,4 +11,3 @@ def MBA_stressed(df_returns,df_subset, alpha, stressed_range, investments, perce
         es_array[i-1] = expected_shortfall(cov_matrix, alpha, percentile)
 
     return var_array, es_array
-

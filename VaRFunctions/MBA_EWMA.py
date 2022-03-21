@@ -15,17 +15,6 @@ def MBA_EWMA(df_returns, alpha, percentile=0.99, n=250, lam=0.95, sigma_init=Non
     return var_array, es_array
 
 
-# def MBA_EWMA(df_data, investments, alpha, percentile=0.99, n=200, lam=0.95, sigma_init=None):
-
-
-#     for i in range(n,df_data.shape[0]):
-#         var_array[i] = VaR(ewma(df_data[pct_investments][i-n:i],lam), alpha, percentile)
-
-#     df_data[(f'MBA_EWMA_{percentile}_{n}_{lam}')] = var_array
-
-#     return df_data
-
-
 def ewma(df_pct_data, lam, sigma_init=None):
 
     # convert to numpy

@@ -43,20 +43,3 @@ def calculate_var_es(stock_returns, loss, df_returns, df_data, investments, alph
     
     
     return dict_output, name_column
-    
-
-# def calculate_vars_risk_factors(df_data
-#                                 , investments
-#                                 , alpha_linked
-#                                 , market_dict
-#                                 , fx_dict
-#                                 , indices_dict
-#                                 , base_currency):
-#     df_returns = df_data.pct_change().dropna()
-    
-#     mba_map_fx_var, es_mba_map_fx = mba_map_fx(df_returns, investments, alpha_linked, market_dict, fx_dict
-#                                       , indices_dict, base_currency, percentile=0.99, n=250)
-#     mba_map_index_var, es_mba_map_index = mba_map_index(df_returns, investments, alpha_linked, market_dict, fx_dict
-#                                       , indices_dict, base_currency, percentile=0.99, n=250)
-    
-#     return pd.DataFrame([mba_map_fx_var,mba_map_index_var])

@@ -82,5 +82,3 @@ def mba_map_index(df_returns
         es_array[i-1] = np.sqrt(portfolio_variance_capm) * norm.pdf(norm.ppf(percentile))/(1-percentile)
     
     return var_array, es_array
-        
-    
